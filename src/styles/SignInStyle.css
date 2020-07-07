@@ -1,0 +1,26 @@
+.marin-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25%;
+  transform: translate(-50%, -50%);
+}
+
+.marin-center .login-form .ant-row{
+  display: block;
+  text-align: left;
+}
+
+
+.login-form {
+    width: 100%;
+  }
+.login-form-forgot {
+    float: right;
+  }
+.ant-col-rtl .login-form-forgot {
+    float: left;
+  }
+.login-form-button {
+    width: 100%;
+  }

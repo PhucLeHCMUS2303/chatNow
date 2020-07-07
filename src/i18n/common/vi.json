@@ -1,0 +1,61 @@
+{
+    "_comment1":{
+        "title":"Signin_page"
+    },
+    "languages": {
+        "title": "Ngôn ngữ"
+    },
+    "signin":{
+        "title":"Đăng nhập ngay"
+    },
+    "getStarted":{
+        "title":"Bắt đầu với dịch vụ của chúng tôi"
+    },
+    "login":{
+        "title":"Đăng nhập"
+    },
+    "rememberMe":{
+        "title":"Nhớ đăng nhập"
+    },
+    "forgotPassword":{
+        "title":"Quên mật khẩu"
+    },
+    "notReadyAccount":{
+        "title":"Bạn chưa có tài khoản?"
+    },
+    "register":{
+        "title":"Đăng ký ngay !"
+    },
+    "loginFail":{
+        "title":"Chúng tôi không tìm thấy tài khoản nào với email bạn nhập!!"
+    },
+    "_comment2":{
+        "title":"Signup_page"
+    },
+    "signup":{
+        "title":"Đăng ký"
+    },
+    "createAccount":{
+        "title":"Tạo tài khoản"
+    },
+    "firstName":{
+        "title":"Họ"
+    },
+    "lastName":{
+        "title":"Tên"
+    },
+    "password":{
+        "title":"Mật khẩu"
+    },
+    "confirmPassword":{
+        "title":"Xác nhận lại mật khẩu"
+    },
+    "haveAccount":{
+        "title":"Bạn đã có tài khoản?"
+    },
+    "loginNow":{
+        "title":"Đăng nhập ngay!"
+    }
+
+
+}

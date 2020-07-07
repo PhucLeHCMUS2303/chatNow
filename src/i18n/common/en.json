@@ -1,0 +1,59 @@
+{
+    "_comment1":{
+        "title":"Signin_page"
+    },
+    "languages": {
+        "title": "Languages"
+    },
+    "signin":{
+        "title":"Sign in now"
+    },
+    "getStarted":{
+        "title":"Get Started with our sevice"
+    },
+    "login":{
+        "title":"Sign In"
+    },
+    "loginNow":{
+        "title":"Login now !"
+    },
+    "rememberMe":{
+        "title":"Remember me"
+    },
+    "password":{
+        "title":"Password"
+    },
+    "confirmPassword":{
+        "title":"Confirm Password"
+    },
+    "forgotPassword":{
+        "title":"Forgot Password"
+    },
+    "notReadyAccount":{
+        "title":"Don't have an account yet?"
+    },
+    "register":{
+        "title":"Register now !"
+    },
+    "loginFail":{
+        "title":"We cannot find an account with that email address!!"
+    },
+    "_comment2":{
+        "title":"Signup_page"
+    },
+    "signup":{
+        "title":"Sign up"
+    },
+    "createAccount":{
+        "title":"Create an account"
+    },
+    "firstName":{
+        "title":"First name"
+    },
+    "lastName":{
+        "title":"Last name"
+    },
+    "haveAccount":{
+        "title":"Already have an account?"
+    }
+}
