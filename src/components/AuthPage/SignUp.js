@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import { Form, Input, Button } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import {Link} from 'react-router-dom';
@@ -10,21 +10,21 @@ import {useTranslation} from "react-i18next";
 
 const SignUp = ({form}) => {
 
-  const [info,setInfo] = useState({firstName: null,
-                                  lastName: null,
-                                  email: null,
-                                  password:null}
-                                  );
+  // const [info,setInfo] = useState({firstName: null,
+  //                                 lastName: null,
+  //                                 email: null,
+  //                                 password:null}
+  //                                 );
 
   const [t] = useTranslation("common");
 
   const onFinish = (values)=>{
-    setInfo({
-      firstName:values.firstname,
-      lastName:values.lastname,
-      password:values.password,
-      email:values.email
-    });
+    // setInfo({
+    //   firstName:values.firstname,
+    //   lastName:values.lastname,
+    //   password:values.password,
+    //   email:values.email
+    // });
   };
 
   const doRegister = (values) => {
@@ -186,4 +186,4 @@ const SignUp = ({form}) => {
   );
 };
 
-export default (SignUp);
+export default SignUp;

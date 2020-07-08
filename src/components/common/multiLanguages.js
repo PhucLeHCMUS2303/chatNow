@@ -3,8 +3,9 @@ import { Menu, Dropdown } from "antd";
 import { DownOutlined } from "@ant-design/icons";
 import iconlanguages from "../../image/languages.svg";
 import {useTranslation} from "react-i18next";
+import './multiLanguages.css';
 
-function ChangeLanguages() {
+function MultiLanguages() {
     const [t,i18n] = useTranslation("common");
     const menu = (
      <Menu>
@@ -21,7 +22,7 @@ function ChangeLanguages() {
      <img src={iconlanguages} style={{backgroundSize:"30px 30px",width:"30px",alignContent:"center"}} alt = "iconLanguages"></img>
        
      <Dropdown overlay={menu} trigger={['click']}>
-     <button style={{border:"none"}} className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+     <button style={{border:"none", background:"transparent", cursor:"pointer"}} className="ant-dropdown-link multiLanguages" onClick={e => e.preventDefault()}>
        {t("languages.title")} <DownOutlined />
      </button>
      </Dropdown>
@@ -30,4 +31,4 @@ function ChangeLanguages() {
  }
  
 
-export default ChangeLanguages;
+export default MultiLanguages;

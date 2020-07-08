@@ -11,3 +11,9 @@ export const isSignout=()=>{
         type:actions.NO_AUTHENTICATED
     }
 }
+
+export const isLoading=()=>{
+    return {
+        type:actions.IS_LOADING
+    }
+}

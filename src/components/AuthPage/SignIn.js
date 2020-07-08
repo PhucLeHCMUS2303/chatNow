@@ -1,59 +1,47 @@
 import React,{useState} from "react";
 import { Form, Input, Button, Checkbox} from "antd";
-import { UserOutlined,WarningOutlined } from "@ant-design/icons";
+import { UserOutlined,WarningOutlined} from "@ant-design/icons";
 import {Link, useHistory} from 'react-router-dom';
 import {auth} from '../../services/firebase';
 import "../../styles/SignInStyle.css";
 import logo from '../../image/iconchat.png';
 import {useDispatch} from 'react-redux';
 import {isSignin} from '../../actions/signin';
-import {setCookie} from '../../common/cookie';
 import {useTranslation} from "react-i18next";
+import {getCookie} from "../../common/cookie";
 //import crypto-js from 'crypyto-js';
 
 const SignIn = () => {
 
-  const [info,setInfo] = useState({
-                                    email: null,
-                                    password:null
-  });
+  // const [info,setInfo] = useState({
+  //                                   email: null,
+  //                                   password:null
+  // });
   const [t] = useTranslation("common");
-  var CryptoJS = require("crypto-js");
+  //var CryptoJS = require("crypto-js");
   const [loginFail, setLoginFail]= useState(false);
+  const [loading,setLoading]=useState(false);
   const history = useHistory();
   const dispatch=useDispatch();
 
   const onFinish = async (values) => {
+
+    setLoading(true);
     await auth()
       .signInWithEmailAndPassword(values.email, values.password)
       .then((user) => {
-        setInfo({
-          password:values.password,
-          email:values.email
-        });
-        const action = isSignin();
-        dispatch(action);
+        // setInfo({
+        //   password:values.password,
+        //   email:values.email
+        // });
+        const actionSignin = isSignin();
+        dispatch(actionSignin);
         history.push("/");
       })
       .catch((err) => {
         setLoginFail(true);
+        setLoading(false);
       });
-
-    await auth()
-      .currentUser.getIdToken(true)
-      .then(function (idToken) {
-        // Send token to your backend via HTTPS
-        localStorage.setItem("idToken", idToken);
-      })
-      .catch(function (error) {
-        // Handle error
-        console.log(error);
-      });
-
-    if(info){
-      await setCookie('email',CryptoJS.AES.encrypt('lehuuphuc', '123').toString(),10);
-      await setCookie('password',CryptoJS.AES.encrypt('123456', '123').toString(),10);
-  }
   };
 
   return (
@@ -64,7 +52,7 @@ const SignIn = () => {
       <h3>{t("signin.title")}</h3>
       <p>{t("getStarted.title")}</p>
       <p style={{ color: "red" }}>
-        {loginFail && <WarningOutlined/>}&nbsp;
+        {loginFail && <WarningOutlined />}&nbsp;
         {loginFail && t("loginFail.title")}
       </p>
 
@@ -105,12 +93,13 @@ const SignIn = () => {
         </Form.Item>
         <Form.Item>
           <Form.Item name="remember" valuePropName="checked" noStyle>
-          <Checkbox>{t("rememberMe.title")}</Checkbox>
+            <Checkbox>{t("rememberMe.title")}</Checkbox>
           </Form.Item>
-
-          <a className="login-form-forgot" href="">
-            {t("forgotPassword.title")}
-          </a>
+          <span style={{float:"right"}}>
+            <Link tabIndex={1000}>
+              <span>{t("forgotPassword.title")}</span>
+            </Link>
+          </span>
         </Form.Item>
 
         <Form.Item>
@@ -118,10 +107,12 @@ const SignIn = () => {
             type="primary"
             htmlType="submit"
             className="login-form-button"
+            loading={loading}
           >
-            {t("login.title")}
+            {!loading && t("login.title")}
           </Button>
-        {t("notReadyAccount.title")} <Link to="/signup"> {t("register.title")}</Link>
+          {t("notReadyAccount.title")}{" "}
+          <Link to="/signup"> {t("register.title")}</Link>
         </Form.Item>
       </Form>
     </div>

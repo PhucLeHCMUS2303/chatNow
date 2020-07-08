@@ -1,15 +1,22 @@
+import * as types from '../constants/index';
+
 const initialState={
-    isAuthenticated:false
+    isAuthenticated:false,
+    isLoading:true
 }
 
 const signinReducer=(state=initialState,action)=>{
     switch(action.type){
-        case 'IS_AUTHENTICATED':{
+        case types.IS_AUTHENTICATED:{
             state.isAuthenticated=true;
             return state;
         }
-        case 'NO_AUTHENTICATED':{
+        case types.NO_AUTHENTICATED:{
             state.isAuthenticated=false;
+            return state;
+        }
+        case types.IS_LOADING:{
+            state.isLoading=false
             return state;
         }
         default:
